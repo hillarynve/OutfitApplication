@@ -18,12 +18,23 @@ def menu():
 
     while(user_input := input(MENU_PROMPT)) != "5":
         if user_input == "1":
-            pass
+            name = ("Enter the clothing item's name: ")
+            body_location = ("Enter the clothing item's body location: ")
+            clothing_type = ("Enter the clothing item's type: ")
+            color_pattern = ("Enter the clothing item's color: ")
+            fashion_type = ("Enter the clothing item's fashion style: ")
+
+            database.add_clothes(connection, name, body_location, clothing_type, color_pattern, fashion_type)
         elif user_input == "2":
-            pass
+            clothing = database.get_all_clothes(connection)
+
+            for item in clothing:
+                print(item)
+        elif user_input == "3":
             pass
         elif user_input == "4":
             pass
         else:
             print("Invalid input. Please try again!")
 menu()
+

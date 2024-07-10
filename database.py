@@ -7,7 +7,7 @@ INSERT_CLOTHING = "INSERT INTO clothing(name, body_location, clothing_type, colo
 
 GET_ALL_CLOTHES = "SELECT * FROM clothing;"
 
-GET_CLOTHES_BY_NAME = "SELECT * FROM clothes WHERE name = ?;"
+GET_CLOTHES_BY_NAME = "SELECT * FROM clothing WHERE name = ?;"
 
 GET_COLOR_PATTERN_FOR_CLOTHES = """
 SELECT color_pattern FROM clothing
