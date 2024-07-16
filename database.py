@@ -14,6 +14,8 @@ SELECT color_pattern FROM clothing
 WHERE name = ?
 LIMIT 1; """
 
+DELETE_CLOTHING_BY_NAME = "DELETE FROM clothing WHERE name = ?;"
+
 def connect():
     return sqlite3.connect("clothing_data.db")
 
@@ -36,3 +38,7 @@ def get_clothes_by_name(connection, name):
 def get_color_pattern_for_clothes(connection, name):
     with connection:
         return connection.execute(GET_COLOR_PATTERN_FOR_CLOTHES, (name,)).fetchone()
+
+def delete_clothing_by_name(connection, name):
+    with connection:
+        connection.execute(DELETE_CLOTHING_BY_NAME, (name,))
