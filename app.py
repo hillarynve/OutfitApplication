@@ -36,7 +36,7 @@ def menu():
             clothing = database.get_clothes_by_name(connection, name)
 
             for item in clothing:
-                print(f"{name} in {fashion_type} style")
+                print(f"{item[1]} in a {item[5]} style.")
         elif user_input == "4":
             name = input("Enter the clothing item's name to find: ")
             color_option = database.get_color_pattern_for_clothes(connection, name)
